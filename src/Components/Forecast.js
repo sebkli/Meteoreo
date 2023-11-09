@@ -1,11 +1,11 @@
-import React from "react";
-import ForecastDay from "../ForecastDay";
+import React from 'react';
+import ForecastDay from './ForecastDay';
 
 const Forecast = ({ forecast }) => {
   let fiveDayForecast = [];
   if (forecast.list) {
     fiveDayForecast = forecast.list.filter((item) => {
-      return item.dt_txt[12] == "2";
+      return item.dt_txt[12] === '2';
     });
   }
 

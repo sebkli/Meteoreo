@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from "react";
-import Forecast from "./Forecast";
+import React, { useState } from 'react';
 
 const SearchField = ({ setForecast, setWeather, weather }) => {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
 
-  const APIKey = "d414bf256bb4c26e08ae3f1140ae8d97";
+  const APIKey = 'd414bf256bb4c26e08ae3f1140ae8d97';
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetchWeather(city);
     fetchForecast(city);
-    setCity("");
+    setCity('');
   };
 
   const fetchWeather = async (city) => {
@@ -44,11 +43,7 @@ const SearchField = ({ setForecast, setWeather, weather }) => {
           Search
         </button>
       </form>
-      {weather.cod === "404" ? (
-        <h1 className="error">City not found!</h1>
-      ) : (
-        <></>
-      )}
+      {weather.cod === '404' && <h1 className="error">City not found!</h1>}
     </div>
   );
 };
